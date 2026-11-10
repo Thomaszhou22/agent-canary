@@ -1,7 +1,7 @@
 ---
 name: agent-canary
 description: Plant decoy credentials in your OpenClaw workspace to detect malicious skill behavior. Canary tokens trigger alerts when read, copied, or exfiltrated. Activate when user says "deploy canary", "set up honeypot", "plant decoy", "canary check", "canary status", or "canary cleanup".
-version: 1.1.0
+version: 1.1.1
 ---
 
 # Agent Canary
