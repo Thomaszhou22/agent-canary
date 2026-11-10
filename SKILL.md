@@ -9,28 +9,28 @@ version: 1.1.0
 > Decoy credentials planted in your workspace. When a skill touches them, you know.
 
 
-## Onboarding（首次使用）
+## Onboarding (First Use)
 
-当用户第一次触发本 skill 且 `memory/agent_canary_state.json` 不存在时，执行一次性引导：
+When the user first triggers this skill and `memory/agent_canary_state.json` doesn't exist, run a one-time setup:
 
-1. **介绍能力**（一句话）：_"我可以在你的工作区布设诱饵凭证，一旦有恶意 skill 或 agent 读取它们就会立刻告警。"_
+1. **Introduce capability** (one sentence): _"I can plant decoy credentials in your workspace — if any malicious skill or agent reads them, you get an instant alert."_
 
-2. **快速配置：**
+2. **Quick configuration:**
 
-1. **告警方式**（默认：聊天消息）
-   - 聊天消息（当前对话中告警）
-   - 邮件（需要已配置邮件服务）
-   - 静默（仅记录，不主动告警）
-2. **蜜饵密度**（默认：中）
-   - 低（3-5 个蜜饵，精准检测）
-   - 中（8-12 个蜜饵，平衡覆盖）
-   - 高（15+ 个蜜饵，最大覆盖但可能误报）
+1. **Alert method**(Default: Chat message)
+   - Chat message (alert in current conversation)
+   - Email (requires configured mail service)
+   - Silent (log only, no active alerting)
+2. **Decoy density**(Default: Medium)
+   - Low (3-5decoys, precise detection)
+   - Medium (8-12decoys, balanced coverage)
+   - High (15+decoys, maximum coverage but may have false positives)
 
-3. **写入初始状态文件** `memory/agent_canary_state.json`（JSON 格式，含 `onboarded: true` 和时间戳）
+3. **Write initial state file** `memory/agent_canary_state.json`(JSON format, with `onboarded: true` and timestamp)
 
-4. **确认完成**：_"设置完成！以后直接用就行。随时可以说'reset settings'重新配置。"_
+4. **Confirm completion**: _"Setup done! Just use it from now on. Say 'reset settings' anytime to reconfigure."
 
-**Onboarding 只执行一次**，后续每次激活直接读取状态文件。用户说 "reset settings" 时删除状态文件重新引导。
+**Onboarding runs exactly once.** Subsequent activations read the state file directly. When the user says "reset settings", delete the state file and re-run setup.
 
 ---
 
